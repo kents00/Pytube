@@ -29,7 +29,3 @@ source env/bin/activate
 ```
 pip install -r requirements.txt
 ```
-# Running Pytube
-```
-python download.py
-```

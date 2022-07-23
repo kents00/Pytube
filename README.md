@@ -29,3 +29,6 @@ source env/bin/activate
 ```
 pip install -r requirements.txt
 ```
+
+# Bulk Download
+- Download all the videos in a playlist, insert your urls inside the ```bulk.txt``` file.

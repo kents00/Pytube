@@ -8,7 +8,7 @@
 
 Download YouTube videos and music using pytube library!
 
-# Folder
+#### Folder
 This is the folder where the files are stored.
 ```
 ├── Download # These are the outputs what you've download
@@ -16,7 +16,7 @@ This is the folder where the files are stored.
 |    ├── YouTube Video
 ├── donwload.py #This is our pytube downloader
 ```
-# Installation
+#### Installation
 - We need a virtual environment for our project to build up the environment. [click here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/) docs virtual environment
 ```
 virtualenv env
@@ -30,5 +30,5 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-# Bulk Download
+#### Bulk Download
 - Download all the videos in a playlist, insert your urls inside the ```bulk.txt``` file.

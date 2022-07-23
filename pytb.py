@@ -40,23 +40,26 @@ def main():
     downloads_path = "download"
     select_format = int(input("Please select a format:\n[1] Video \n[2] Audio\n[3] Bulk Download\n"))
 
-    if select_format == 1:
-        link = str(input("Enter url to download:"))
-        get_link = YouTube(link)
-        get_link.streams.get_highest_resolution().download(output_path=os.path.join(downloads_path, 'YoutubeVideo'))
-        print("Download Complete!")
-    elif select_format == 2:
-        link = str(input("Enter url to download:"))
-        get_link = YouTube(link)
-        stream = get_link.streams.filter(only_audio=True).first().download(output_path=os.path.join(downloads_path, 'YoutubeAudio'))
-        base, ext = os.path.splitext(stream)
-        new_file = base + '.mp3'
-        os.rename(stream, new_file)
-        print("Download Complete!")
-    elif select_format == 3:
-        bulk_download()
-    else:
-        print("Please select 1, 2 or 3")
+    try:
+        if select_format == 1:
+            link = str(input("Enter url to download:"))
+            get_link = YouTube(link)
+            get_link.streams.get_highest_resolution().download(output_path=os.path.join(downloads_path, 'YoutubeVideo'))
+            print("Download Complete!")
+        elif select_format == 2:
+            link = str(input("Enter url to download:"))
+            get_link = YouTube(link)
+            stream = get_link.streams.filter(only_audio=True).first().download(output_path=os.path.join(downloads_path, 'YoutubeAudio'))
+            base, ext = os.path.splitext(stream)
+            new_file = base + '.mp3'
+            os.rename(stream, new_file)
+            print("Download Complete!")
+        elif select_format == 3:
+            bulk_download()
+        else:
+            print("Please select 1, 2 or 3")
+    except TypeError:
+        print("Please enter a valid url")
 
 if __name__ == "__main__":
     main()

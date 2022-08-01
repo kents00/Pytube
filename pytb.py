@@ -17,7 +17,7 @@ def bulk_download():
                 for i in output:
                     get_link = YouTube(i)
                     stream = get_link.streams.filter(only_audio=True).first().download(output_path=os.path.join(downloads_path, 'YoutubeAudio'))
-                    base, ext = os.path.splitext(stream)
+                    base = os.path.splitext(stream)
                     new_file = base + '.mp3'
                     os.rename(stream, new_file)
                     print("Download Complete!")
